@@ -1,0 +1,146 @@
+/* less/typo.less */
+
+// ** MIXINS **
+// ------------
+ 
+.text-color(@color){
+  color: @color;
+  .link-color(@color);
+}
+
+.link-color(@color){
+  a{
+    color: @color;
+    &:hover,
+    &:focus,
+    &:active{
+      color: darken(@color,10%);
+    }
+  } 
+}
+
+// ** HEADINGS **
+// --------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+  .link-color(@headings-color);
+}
+
+h1, .h1{
+  .margin-b(1.5);
+}
+
+// h4, .h4{
+//   .text-color(@brand-primary);
+// }
+
+// ** BOLD AND LINKS **
+// --------------------
+
+// strong, b,
+// .text-bold,
+// a{
+//   font-weight: 600;
+// }
+
+a{
+  .transition(all ease-in-out .2s);
+}
+
+a:hover,
+a:focus,
+a:active{
+  text-decoration: none;
+}
+
+// ** BLOCKQUOTE **
+// ----------------
+// * border-color: see variable.less:825
+
+blockquote{
+  .margin-v(1);
+  font-size: @font-size-large;
+}
+
+// ** LEAD **
+// ----------
+// * lead below sm . see type.less:62
+
+.lead{
+  font-size: (@font-size-base * 1.3);
+  color: @gray-darker;
+  // font-weight: 200;
+}
+
+// ** NEGATIVE **
+// --------------
+
+.negative{
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6{
+    .text-color(#fff);
+  }
+
+  p{
+    color: #fff;
+  }
+
+  .link-color(#fff);
+
+  .btn{
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+// ** NAV BAR **
+// -------------
+
+// .navbar-default{
+//   .navbar-nav li a{
+//     text-transform: uppercase;
+//     font-weight: 600;
+//     font-size: @font-size-small;
+//   }
+// }
+
+// ** LINK INSIDE COPY **
+// ----------------------
+
+.field-name-body,
+.field-name-field-short,
+.copy{
+  .link-color(@brand-primary);
+}
+
+// ** WEBFORM **
+// -------------
+
+// .webform-client-form{
+//   .description{
+//     font-size: @font-size-small;
+//     margin-top: 10px;
+//   }
+// }
+
+// ** FOOTER **
+// ------------
+
+.block-footer{
+  h5{
+    .text-color(#fff);
+    text-transform: uppercase;
+  }
+  hr{
+    border-color: @gray;
+  }
+}
+
+.footer-common-link{
+  p{
+    .text-color(@gray-light);
+  }
+}
+
+// ** TO ADD: breadcrumb
