@@ -1,4 +1,4 @@
-name = Sub Theme
+name = Subtheme
 description = Tema di terzo livello (Mekit subtheme).
 core = 7.x
 base theme = mekit
@@ -7,13 +7,10 @@ base theme = mekit
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
 
-regions[wide_top]       = 'Wide Top'
-regions[navigation]     = 'Navigation'
-regions[header]         = 'Top Bar'
-regions[highlighted]    = 'Highlighted'
+regions[wide_top]       = 'Wide top'
 regions[help]           = 'Help'
 regions[content]        = 'Content'
-regions[wide_bottom]    = 'Wide Bottom'
+regions[wide_bottom]    = 'Wide bottom'
 regions[bottom]			    = 'Bottom'
 regions[footer]         = 'Footer'
 
