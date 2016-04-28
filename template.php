@@ -9,7 +9,7 @@
  * Implements hook_preprocess_html()
  * Google fonts and Google Analitycs
  */
-function subtheme_preprocess_html(&$variables) {
+function starter_preprocess_html(&$variables) {
   $fonts = array(
     0 => 'http://fonts.googleapis.com/css?family=Montserrat:400,700',
     1 => 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,400,600',
@@ -19,7 +19,7 @@ function subtheme_preprocess_html(&$variables) {
     drupal_add_css($css, array('type' => 'external'));
   }
 
-  //$ga = _subtheme_get_ga_script();
+  //$ga = _starter_get_ga_script();
   //drupal_add_js($ga, array('type' => 'inline', 'scope' => 'header', 'weight' => 5));
 }
 
@@ -29,11 +29,11 @@ function subtheme_preprocess_html(&$variables) {
 /**
  * Implements hook_preprocess_node()
  */
-function subtheme_preprocess_node(&$vars){
+function starter_preprocess_node(&$vars){
   $node = $vars['node'];
   switch ($node->type) {
     //case 'page':
-    //  _subtheme_preprocess_node_page($vars);
+    //  _starter_preprocess_node_page($vars);
     //  break;
     
     default:
@@ -42,7 +42,7 @@ function subtheme_preprocess_node(&$vars){
   }
 }
 
-function _subtheme_preprocess_node_page(&$vars){
+function _starter_preprocess_node_page(&$vars){
 }
 
 // ** ADMIN **
@@ -52,7 +52,7 @@ function _subtheme_preprocess_node_page(&$vars){
  * Implements hook_form_FORM_ID_alter(&$form, &$form_state, $form_id)
  * rimuovo alcuni parametri per gli autenticated user
  */
-function subtheme_form_node_form_alter(&$form, $form_state){
+function starter_form_node_form_alter(&$form, $form_state){
   global $user;
 
   $form['nodehierarchy']['#title'] = 'Genitore';
@@ -73,7 +73,7 @@ function subtheme_form_node_form_alter(&$form, $form_state){
 // ** GA **
 // --------
 
-function _subtheme_get_ga_script(){
+function _starter_get_ga_script(){
   $ga = "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

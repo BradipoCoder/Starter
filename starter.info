@@ -1,5 +1,5 @@
-name = Subtheme
-description = Tema di terzo livello (Mekit subtheme).
+name = Starter theme
+description = A starter theme to create new Mekit subtheme.
 core = 7.x
 base theme = mekit
 
