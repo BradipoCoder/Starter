@@ -19,7 +19,7 @@ function subtheme_preprocess_html(&$variables) {
     drupal_add_css($css, array('type' => 'external'));
   }
 
-  $ga = _subtheme_get_ga_script();
+  //$ga = _subtheme_get_ga_script();
   //drupal_add_js($ga, array('type' => 'inline', 'scope' => 'header', 'weight' => 5));
 }
 
@@ -32,8 +32,8 @@ function subtheme_preprocess_html(&$variables) {
 function subtheme_preprocess_node(&$vars){
   $node = $vars['node'];
   switch ($node->type) {
-    //case 'news':
-    //  _subtheme_preprocess_node_news($vars);
+    //case 'page':
+    //  _subtheme_preprocess_node_page($vars);
     //  break;
     
     default:
@@ -42,7 +42,7 @@ function subtheme_preprocess_node(&$vars){
   }
 }
 
-function _subtheme_preprocess_node_news(&$vars){
+function _subtheme_preprocess_node_page(&$vars){
 }
 
 // ** ADMIN **
