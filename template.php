@@ -50,7 +50,7 @@ function _starter_preprocess_node_page(&$vars){
 
 /**
  * Implements hook_form_FORM_ID_alter(&$form, &$form_state, $form_id)
- * rimuovo alcuni parametri per gli autenticated user
+ * Node editing and some permission
  */
 function starter_form_node_form_alter(&$form, $form_state){
   global $user;
