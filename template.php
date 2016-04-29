@@ -32,9 +32,9 @@ function starter_preprocess_html(&$variables) {
 function starter_preprocess_node(&$vars){
   $node = $vars['node'];
   switch ($node->type) {
-    //case 'page':
-    //  _starter_preprocess_node_page($vars);
-    //  break;
+    case 'page':
+      _starter_preprocess_node_page($vars);
+      break;
     
     default:
       # code...
@@ -43,6 +43,10 @@ function starter_preprocess_node(&$vars){
 }
 
 function _starter_preprocess_node_page(&$vars){
+  if ($vars['view_mode'] == 'child'){
+    $vars['classes_array'][] = 'col-sm-6';
+    $vars['classes_array'][] = 'col-md-4';
+  }
 }
 
 // ** ADMIN **
