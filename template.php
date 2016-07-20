@@ -5,6 +5,10 @@
  * template.php
  */
 
+require('include/content.php');
+require('include/content-types.php');
+require('include/paragraphs.php');
+
 /**
  * Implements hook_preprocess_html()
  * Google fonts and Google Analitycs
@@ -21,32 +25,6 @@ function starter_preprocess_html(&$variables) {
 
   //$ga = _starter_get_ga_script();
   //drupal_add_js($ga, array('type' => 'inline', 'scope' => 'header', 'weight' => 5));
-}
-
-// ** PREPROCESS NODE **
-// ---------------------
-
-/**
- * Implements hook_preprocess_node()
- */
-function starter_preprocess_node(&$vars){
-  $node = $vars['node'];
-  switch ($node->type) {
-    case 'page':
-      _starter_preprocess_node_page($vars);
-      break;
-    
-    default:
-      # code...
-      break;
-  }
-}
-
-function _starter_preprocess_node_page(&$vars){
-  if ($vars['view_mode'] == 'child'){
-    $vars['classes_array'][] = 'col-sm-6';
-    $vars['classes_array'][] = 'col-md-4';
-  }
 }
 
 // ** ADMIN **
