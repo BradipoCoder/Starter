@@ -8,37 +8,37 @@
 // ** PARAGRAPH **
 // ---------------
 
-function PHOOK_preprocess_entity(&$vars){
+function __starter_preprocess_entity(&$vars){
   $vars['classes_array'][] = 'entity-paragraphs-item-' . $vars['id'];
 
   if($vars['entity_type'] == 'paragraphs_item'){
     switch ($vars['paragraphs_item']->bundle) {
       case 'imgs':
-        _PHOOK_preprocess_p_imgs($vars);
+        _starter_preprocess_p_imgs($vars);
         break;
 
       case 'img_big':
-        _PHOOK_preprocess_p_img_big($vars);
+        _starter_preprocess_p_img_big($vars);
         break;
 
       case 'text_icon':
-        _PHOOK_preprocess_p_text_icon($vars);
+        _starter_preprocess_p_text_icon($vars);
         break;
 
       case 'text_img':
-        _PHOOK_preprocess_p_text_img($vars);
+        _starter_preprocess_p_text_img($vars);
         break;
 
       case 'text_parallax':
-        _PHOOK_preprocess_p_text_parallax($vars);
+        _starter_preprocess_p_text_parallax($vars);
         break;
 
       case 'text_isotope':
-        _PHOOK_preprocess_p_text_isotope($vars);
+        _starter_preprocess_p_text_isotope($vars);
         break;
 
       case 'copy':
-        _PHOOK_preprocess_p_copy($vars);
+        _starter_preprocess_p_copy($vars);
         break;
 
         # code...
@@ -47,7 +47,7 @@ function PHOOK_preprocess_entity(&$vars){
   }
 }
 
-function _PHOOK_preprocess_p_imgs(&$vars){
+function _starter_preprocess_p_imgs(&$vars){
   $p = $vars['paragraphs_item'];
 
   // Options
@@ -92,7 +92,7 @@ function _PHOOK_preprocess_p_imgs(&$vars){
   }
 }
 
-function _PHOOK_preprocess_p_img_big(&$vars){
+function _starter_preprocess_p_img_big(&$vars){
   
   if ($vars['view_mode'] == 'full'){
     $vars['content']['field_img'] = array(
@@ -112,7 +112,7 @@ function _PHOOK_preprocess_p_img_big(&$vars){
   }
 }
 
-function _PHOOK_preprocess_p_text_icon(&$vars){
+function _starter_preprocess_p_text_icon(&$vars){
   $icon = $vars['content']['field_icon'][0]['#icon'];
 
   $vars['content']['data'] = array(
@@ -131,7 +131,7 @@ function _PHOOK_preprocess_p_text_icon(&$vars){
   $vars['content']['field_desc']['#printed'] = TRUE;
 }
 
-function _PHOOK_preprocess_p_text_img(&$vars){
+function _starter_preprocess_p_text_img(&$vars){
   $p = $vars['paragraphs_item'];
 
   $vars['content'] = array(
@@ -171,7 +171,7 @@ function _PHOOK_preprocess_p_text_img(&$vars){
   }
 }
 
-function _PHOOK_preprocess_p_text_isotope(&$vars){
+function _starter_preprocess_p_text_isotope(&$vars){
   $p = $vars['paragraphs_item'];
 
   $vars['content'] = array(
@@ -210,7 +210,7 @@ function _PHOOK_preprocess_p_text_isotope(&$vars){
   }
 }
 
-function _PHOOK_preprocess_p_text_parallax(&$vars){
+function _starter_preprocess_p_text_parallax(&$vars){
   $p = $vars['paragraphs_item'];
   if (isset($p->field_img['und'][0]['uri'])){
     $uri = $p->field_img['und'][0]['uri'];
@@ -247,7 +247,7 @@ function _PHOOK_preprocess_p_text_parallax(&$vars){
   }
 }
 
-function _PHOOK_preprocess_p_copy(&$vars){
+function _starter_preprocess_p_copy(&$vars){
   // In specific field
   if ($vars['elements']['#entity']->field_name == 'field_content_down'){
     $vars['content']['#prefix'] = '<div class="container margin-v-2">';
